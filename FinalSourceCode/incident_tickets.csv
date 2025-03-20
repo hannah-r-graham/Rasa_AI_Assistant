@@ -1,0 +1,11 @@
+customer_name,issue_description,ticket_status,assigned_technician,creation_date,resolution_date
+Hannah Graham,The alarm system is not working,in progress,Tom,2025-03-11,
+John Doe,Internet connection is slow,In Progress,Jane,2025-03-12,
+Alice Smith,Computer won't turn on,Closed,Bob,2025-03-10,2025-03-11
+Michael Brown,Printer is jammed,Open,Tom,2025-03-13,
+Emily Davis,Software installation request,In Progress,Jane,2025-03-14,
+David Wilson,Email not syncing,Closed,Bob,2025-03-09,2025-03-10
+Sarah Johnson,Phone line is down,Open,Tom,2025-03-15,
+Chris Lee,Monitor flickering,In Progress,Jane,2025-03-16,
+Jessica Taylor,Keyboard not working,Closed,Bob,2025-03-08,2025-03-09
+Daniel Harris,Unable to access VPN,Open,Tom,2025-03-17,

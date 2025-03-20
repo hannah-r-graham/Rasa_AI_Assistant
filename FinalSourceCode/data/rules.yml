@@ -1,0 +1,104 @@
+version: "2.0"
+rules:
+
+
+- rule: schedule incident ticket
+  steps:
+  - intent: schedule_incident_ticket
+  - action: schedule_incident_ticket_form
+  - active_loop: schedule_incident_ticket_form
+
+
+- rule: submit incident form
+  condition:
+  - active_loop: schedule_incident_ticket_form
+  steps:
+  - action: schedule_incident_ticket_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_schedule_incident_ticket
+  - action: utter_ticket_confirmation
+
+
+- rule: Provide product info
+  steps:
+  - intent: ask_product_info
+  - action: action_provide_product_info
+
+- rule: Handle product interest
+  steps:
+  - intent: inform_product_interest
+  - action: action_provide_detailed_product_info
+
+- rule: Activate purchase plan form
+  steps:
+  - intent: plan_choice
+  - action: plan_purchase_form
+  - active_loop: plan_purchase_form
+
+
+- rule: submit plan form
+  condition:
+  - active_loop: plan_purchase_form
+  steps:
+  - action: plan_purchase_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_plan_form
+  - action: action_create_order
+
+- rule: Assign specialist to unassigned ticket
+  steps:
+  - intent: assign_specialist_to_a_ticket
+  - action: action_assign_specialist_to_ticket
+  # - action: utter_ticket has been modified
+
+- rule: Activate update ticket status form
+  steps:
+  - intent: update_ticket_status
+  - action: update_ticket_status_form
+  - active_loop: update_ticket_status_form
+
+- rule: submit update ticket status form
+  condition:
+  - active_loop: update_ticket_status_form
+  steps:
+  - action: update_ticket_status_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_update_ticket_status
+  # - action: utter_ticket_status_updated
+- rule: create customer account
+  steps:
+  - intent: create_customer_account
+  - action: create_customer_account_form
+  - active_loop: create_customer_account_form
+
+- rule: submit create customer account form
+  condition:
+  - active_loop: create_customer_account_form
+  steps:
+  - action: create_customer_account_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_create_customer_account
+  - action: utter_customer_account_created
+
+- rule: cancel order when requested
+  steps:
+  - intent: cancel_order
+  - action: action_cancel_order
+  - action: utter_order_cancelled
+
+- rule: provide order infromation
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  # - action: utter_order_information_provided
+
+
+

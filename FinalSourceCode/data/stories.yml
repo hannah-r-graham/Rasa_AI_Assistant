@@ -1,0 +1,48 @@
+version: "2.0"
+stories:
+
+
+- story: interactive_story_1
+  steps:
+  - intent: create_customer_account
+  - action: create_customer_account_form
+  - active_loop: create_customer_account_form
+  - slot_was_set:
+    - requested_slot: customer_name
+  - intent: provide_customer_name
+    entities:
+    - customer_name: Tom Johnson
+  - slot_was_set:
+    - customer_name: Tom Johnson
+  - action: create_customer_account_form
+  - slot_was_set:
+    - requested_slot: email
+  - intent: provide_email
+    entities:
+    - email: user123@gmail.com
+  - slot_was_set:
+    - email: user123@gmail.com
+  - action: create_customer_account_form
+  - slot_was_set:
+    - requested_slot: phone
+  - intent: provide_phone
+    entities:
+    - phone: 404-555-0182
+  - slot_was_set:
+    - phone: 404-555-0182
+  - action: create_customer_account_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_create_customer_account
+  - action: utter_customer_account_created
+
+- story: interactive_story_1
+  steps:
+  - intent: cancel_order
+    entities:
+    - order_name: johnson
+  - slot_was_set:
+    - order_name: johnson
+  - action: action_cancel_order
+  - action: utter_order_cancelled

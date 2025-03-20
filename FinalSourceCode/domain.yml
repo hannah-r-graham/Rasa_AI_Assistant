@@ -1,0 +1,201 @@
+slots:
+  customer_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: customer_name
+        conditions:
+        - active_loop: schedule_incident_ticket_form
+        - active_loop: plan_purchase_form
+        - active_loop: update_ticket_status_form
+        - active_loop: create_customer_account_form
+
+  order_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: order_name
+        intent: cancel_order
+
+  order_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: order_number
+        intent: order_status
+
+  issue_description:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: issue_description
+        conditions:
+        - active_loop: schedule_incident_ticket_form
+
+  product:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity 
+        entity: product
+        intent: inform_product_interest
+
+
+  plan:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: plan
+        intent: plan_choice
+
+
+  credit_card_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: credit_card_number
+        conditions:
+        - active_loop: plan_purchase_form
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: email
+        intent: provide_email
+        conditions:
+        - active_loop: plan_purchase_form
+        - active_loop: create_customer_account_form
+
+  specialist:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: specialist
+        intent: assign_specialist_to_a_ticket
+
+  ticket_status:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: ticket_status
+        intent: update_ticket_status
+
+  phone:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: phone
+        intent: provide_phone
+        conditions:
+        - active_loop: create_customer_account_form
+
+entities:
+  - customer_name
+  - issue_description
+  - product
+  - plan
+  - credit_card_number
+  - email
+  - specialist
+  - ticket_status
+  - phone
+  - order_name
+  - order_number
+
+intents:
+  # - greet
+  # - goodbye
+  # - thank_you
+  - ask_product_info
+  - inform_product_interest
+  - plan_choice
+  - schedule_incident_ticket
+  - provide_customer_name
+  - provide_issue_description
+  - provide_credit_card_number
+  - provide_email
+  - assign_specialist_to_a_ticket
+  - update_ticket_status
+  - create_customer_account
+  - provide_phone
+  - cancel_order
+  - order_status
+
+
+responses:
+  # utter_greet:
+  #   - text: "Hello! How can I help you today?"
+  # utter_goodbye:
+  #   - text: "Goodbye! Have a great day!"
+  # utter_thank_you:
+  #   - text: "You're welcome!"
+  utter_ask_customer_name:
+    - text: "Great, please share who the customer is."
+  utter_ask_issue_description:
+    - text: "Great. Please share a description of the issue."
+  utter_ticket_confirmation:
+    - text: "Thank you. I have opened a ticket for {customer_name} for the issue: {issue_description}."
+  utter_submit_plan_form:
+    - text: "Thank you for your interest in our products. I will now proceed to create an order for {plan}."
+  utter_ask_credit_card_number:
+    - text: "Please provide your credit card number."
+  utter_ask_email:
+    - text: "Please provide your email address."
+  utter_ask_ticket_status:
+    - text: "What status would you like for the ticket?"
+  utter_ask_phone:
+    - text: "Please provide your phone number."
+  utter_customer_account_created:
+    - text: "A customer account has been created for {customer_name} with the email {email} and phone number {phone}."
+  utter_order_cancelled:
+    - text: "The order has been cancelled for {order_name}."
+  # utter_ticket_status_updated:
+  #   - text: "The ticket status has been updated to {ticket_status} for {customer_name}."
+
+  # utter_which_ticket_to_modify:
+  #   - text: "Please specify the customer name you would like to modify the ticket for."
+  # utter_assigned_specialist:
+  #   - text: "The following tickets are unassigned: {unassigned_tickets}. Please specify the ticket you would like to assign a specialist to."
+
+actions:
+  - action_provide_product_info
+  - action_provide_detailed_product_info
+  - action_create_order
+  - action_schedule_incident_ticket
+  - action_assign_specialist_to_ticket
+  - action_update_ticket_status
+  - action_create_customer_account
+  - action_cancel_order
+  - action_check_order_status
+
+forms:
+  schedule_incident_ticket_form:
+    required_slots:
+      - customer_name
+      - issue_description
+  plan_purchase_form:
+    required_slots:
+      - customer_name
+      - credit_card_number
+      - email
+  update_ticket_status_form:
+    required_slots:
+      - ticket_status
+      - customer_name
+  create_customer_account_form:
+    required_slots:
+      - customer_name
+      - email
+      - phone
+
+ 

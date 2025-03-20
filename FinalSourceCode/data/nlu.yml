@@ -1,0 +1,166 @@
+version: "3.1"
+nlu:
+- intent: ask_product_info
+  examples: |
+    - What are the different products you offer?
+    - Tell me about your TV plans
+    - What data plans are available?
+    - Can you explain the On Demand Movie Streaming options?
+- intent: inform_product_interest
+  examples: |
+    - [1](product)
+    - [2](product)
+    - [3](product)
+    - [4](product)
+    - [5](product)
+    - [6](product)
+    - [7](product)
+    - I'm interested in [product 1](product)
+    - Tell me more about [product 2](product)
+    - I want details on [product 3](product)
+    - Can you explain [product 4](product)?
+    - I would like to know more about [product 5](product)
+    - Give me information on [product 6](product)
+    - What about [product 7](product)?
+- intent: plan_choice
+  examples: |
+    - I want to buy [Basic](plan)
+    - Can I purchase [BasicPlus](plan)?
+    - I would like to order [WiFi SpeedLane](plan)
+    - How do I get [product 4](plan)?
+    - I need to buy [WiFi LightLane](plan)
+    - Can you help me with [Premium](plan)?
+    - I'm interested in purchasing [Ultimate](plan)
+    - [Live Sports Events](plan)
+    - I want to buy [On Demand Movie Streaming](plan)
+    - Can I purchase [On Demand Movie Streaming](plan)?
+    - [Security Cameras and Alarms](plan)
+    - I would like to order [Security Cameras and Alarms](plan)
+    - [Remotely Unlock/Lock main entrance](plan)
+- intent: schedule_incident_ticket
+  examples: |
+    - I want to schedule an incident ticket
+    - I need to open a ticket
+    - Can you create an incident ticket for me?
+    - creat an incident ticket
+- intent: provide_customer_name
+  examples: |
+    - The customer is [Tom Johnson](customer_name)
+    - [Tom Johnson](customer_name)
+    - The name is [Tom Johnson](customer_name)
+    - The customer is [Hannah Graham](customer_name)
+    - [Hannah Graham](customer_name)
+    - The name is [Hannah Graham](customer_name)
+    - The customer is [Hannah](customer_name)
+    - [Hannah](customer_name)
+    - The name is [Hannah](customer_name)
+    - [Henry Yellow](customer_name)
+    - The customer is [Henry Yellow](customer_name)
+    - The name is [Henry Yellow](customer_name)
+    - [Henry Cavill](customer_name)
+    - The customer is [Henry Cavill](customer_name)
+- intent: provide_issue_description
+  examples: |
+    - [The customer is having a difficult time accessing their security system](issue_description)
+    - [The security system is not responding](issue_description)
+    - [The customer cannot access their security cameras](issue_description)
+    - [The security cameras are offline](issue_description)
+    - [The alarm system is not working](issue_description)
+    - [The customer is unable to unlock their main entrance remotely](issue_description)
+    - [The customer is experiencing issues with their thermostat](issue_description)
+    - [The house lights are not responding to remote commands](issue_description)
+    - [The customer is having trouble with their WiFi connection](issue_description)
+    - [The WiFi speed is very slow](issue_description)
+    - [The customer is unable to stream movies on demand](issue_description)
+    - [The TV plan channels are not available](issue_description)
+    - [The customer is unable to access online video games](issue_description)
+    - [The customer is experiencing issues with their PPV service](issue_description)
+    - [security](issue_description)
+- intent: provide_credit_card_number
+  examples: |
+    - My credit card number is [1234 5678 9012 3456](credit_card_number)
+    - It's [9876 5432 1098 7654](credit_card_number)
+    - The number is [1111 2222 3333 4444](credit_card_number)
+- intent: provide_email
+  examples: |
+    - My email is [john.doe@example.com](email)
+    - It's [jane.doe@example.com](email)
+    - You can reach me at [contact@company.com](email)
+    - The email address is [info@service.org](email)
+    - Please send the details to [support@helpdesk.net](email)
+    - My email address is [user123@gmail.com](email)
+    - [admin@website.com](email)
+    - [sales@business.com](email)
+    - [feedback@platform.io](email)
+    - [newsletter@updates.co](email)
+- intent: assign_specialist_to_a_ticket
+  examples: |
+    - I want to assign a [Tom](specialist) to a ticket
+    - I need to assign a [Hannah Graham](specialist) to a ticket
+    - Can you assign a [Tom Johnson](specialist) to a ticket?
+    - I want to assign a [Hannah](specialist) to a ticket
+    - I need to assign a [Tom](specialist) to a ticket
+    - Can you assign a [Hannah Graham](specialist) to a ticket?
+    - I want to assign a [Jane](specialist) to a ticket
+    - I want to assign [tom](specialist) to a ticket
+- intent: update_ticket_status
+  examples: |
+    - I want to update the status of a ticket
+    - Can you change the status of a ticket?
+    - I need to modify the status of a ticket
+    - Please update the ticket status
+    - Change the status of the ticket
+    - Update the ticket status to resolved
+    - Mark the ticket as closed
+    - Set the ticket status to [in progress](ticket_status) for customer named [Mary Jane](customer_name)
+    - Change the ticket status for customer named [Hannah Graham](customer_name)
+    - Update the ticket status for customer named [Tom Johnson](customer_name)
+    - Set the ticket status to [in progress](ticket_status)
+    - Change the ticket status to [pending](ticket_status)
+    - Update the ticket status to [resolved](ticket_status)
+    - I want to update a tickets status
+    - [in progress](ticket_status)
+    - i want to update the status of a ticket
+- intent: create_customer_account
+  examples: |
+    - I want to create a customer account
+    - Can you help me set up a new customer account?
+    - I need assistance with creating a customer account
+    - Please guide me through the process of creating a customer account
+    - I would like to register a new customer account
+    - Help me create a customer account
+    - I want to open a new customer account for [Mary Shelly](customer_name)
+    - Can you assist me in creating a customer account for [Tom Johnson](customer_name)?
+    - I need to set up a customer account for [Hannah Graham](customer_name)
+- intent: provide_phone
+  examples: |
+    - My phone number is [123-456-7890](phone)
+    - It's [987-654-3210](phone)
+    - You can reach me at [555-123-4567](phone)
+    - The number is [800-555-0199](phone)
+    - Please call me at [202-555-0173](phone)
+    - My phone number is [303-555-0123](phone)
+    - [404-555-0182](phone)
+    - [505-555-0164](phone)
+    - [606-555-0155](phone)
+    - [1111111189](phone)
+- intent: cancel_order
+  examples: |
+    - I want to cancel an order for [Betsy Johnson](order_name)
+    - Can you help me cancel an order for [Tom Johnson](order_name)?
+    - I need to cancel an order for [Hannah Graham](order_name)
+    - Please assist me in canceling an order for [Mary Jane](order_name)
+    - I want to cancel an order for [Tom](order_name)
+    - Can you help me cancel an order for [Hannah](order_name)?
+    - I need to cancel an order for [Tom Johnson](order_name)
+    - Cancel order for [Tom Johnson](order_name)
+    - i want to cancel an order for [alice johnson](order_name)
+
+- intent: order_status
+  examples: |
+    - what is the status for order [5](order_number)?
+    - Can you tell me the status of order [6](order_number)?
+    - I want to know the status of order [7](order_number)
+    - Please provide the status of order [8](order_number)
+    - I need the status of order [9](order_number)
+    - What is the status of order [1](order_number)?

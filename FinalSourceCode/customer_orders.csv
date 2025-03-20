@@ -1,0 +1,6 @@
+customer_name,product_name,order_date,status,product_plan, credit_card,credit_card
+John Doe,Online TV plan,2025-02-25,Cancel,Basic,,
+Jane Smith,Data Plan,2025-02-26,Shipped,WiFi SpeedLane,,
+Alice Johnson,On Demand Movie Streaming,2025-02-27,Cancel,Premium,,
+Hannah Graham,1,2025-03-11,,basic,,1234 5678 9012 3456
+Tom Johnson,2,2025-03-11,,Speedlane,,1234 5678 9012 3456

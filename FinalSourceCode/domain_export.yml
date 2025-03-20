@@ -1,0 +1,198 @@
+version: '3.1'
+slots:
+  customer_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: customer_name
+      conditions:
+      - active_loop: schedule_incident_ticket_form
+      - active_loop: plan_purchase_form
+      - active_loop: update_ticket_status_form
+      - active_loop: create_customer_account_form
+  order_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: order_name
+      intent: cancel_order
+  issue_description:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: issue_description
+      conditions:
+      - active_loop: schedule_incident_ticket_form
+  product:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: product
+      intent: inform_product_interest
+  plan:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: plan
+      intent: plan_choice
+  credit_card_number:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: credit_card_number
+      conditions:
+      - active_loop: plan_purchase_form
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+      intent: provide_email
+      conditions:
+      - active_loop: plan_purchase_form
+      - active_loop: create_customer_account_form
+  specialist:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: specialist
+      intent: assign_specialist_to_a_ticket
+  ticket_status:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: ticket_status
+      intent: update_ticket_status
+  phone:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: phone
+      intent: provide_phone
+      conditions:
+      - active_loop: create_customer_account_form
+entities:
+- order_name
+- customer_name
+- issue_description
+- product
+- plan
+- credit_card_number
+- email
+- specialist
+- ticket_status
+- phone
+intents:
+- ask_product_info
+- assign_specialist_to_a_ticket
+- cancel_order
+- create_customer_account
+- inform_product_interest
+- plan_choice
+- provide_credit_card_number
+- provide_customer_name
+- provide_email
+- provide_issue_description
+- provide_phone
+- schedule_incident_ticket
+- update_ticket_status
+responses:
+  utter_ask_customer_name:
+  - text: Great, please share who the customer is.
+  utter_ask_issue_description:
+  - text: Great. Please share a description of the issue.
+  utter_ticket_confirmation:
+  - text: 'Thank you. I have opened a ticket for {customer_name} for the issue: {issue_description}.'
+  utter_submit_plan_form:
+  - text: Thank you for your interest in our products. I will now proceed to create an order for {plan}.
+  utter_ask_credit_card_number:
+  - text: Please provide your credit card number.
+  utter_ask_email:
+  - text: Please provide your email address.
+  utter_ask_ticket_status:
+  - text: What status would you like for the ticket?
+  utter_ask_phone:
+  - text: Please provide your phone number.
+  utter_customer_account_created:
+  - text: A customer account has been created for {customer_name} with the email {email} and phone number {phone}.
+  utter_order_cancelled:
+  - text: The order has been cancelled for {order_name}.
+actions:
+- action_cancel_order
+- utter_order_cancelled
+- action_listen
+- action_restart
+- action_session_start
+- action_default_fallback
+- action_deactivate_loop
+- action_revert_fallback_events
+- action_default_ask_affirmation
+- action_default_ask_rephrase
+- action_two_stage_fallback
+- action_unlikely_intent
+- action_back
+- action_send_text
+- '...'
+- action_extract_slots
+- action_cancel_flow
+- action_correct_flow_slot
+- action_clarify_flows
+- action_run_slot_rejections
+- action_clean_stack
+- action_trigger_search
+- action_trigger_chitchat
+- action_reset_routing
+- action_hangup
+- action_repeat_bot_messages
+- action_provide_product_info
+- action_provide_detailed_product_info
+- action_create_order
+- action_schedule_incident_ticket
+- action_assign_specialist_to_ticket
+- action_update_ticket_status
+- action_create_customer_account
+- utter_ask_credit_card_number
+- utter_ask_customer_name
+- utter_ask_email
+- utter_ask_issue_description
+- utter_ask_phone
+- utter_ask_ticket_status
+- utter_customer_account_created
+- utter_submit_plan_form
+- utter_ticket_confirmation
+- schedule_incident_ticket_form
+- plan_purchase_form
+- update_ticket_status_form
+- create_customer_account_form
+forms:
+  schedule_incident_ticket_form:
+    required_slots:
+    - customer_name
+    - issue_description
+  plan_purchase_form:
+    required_slots:
+    - customer_name
+    - credit_card_number
+    - email
+  update_ticket_status_form:
+    required_slots:
+    - ticket_status
+    - customer_name
+  create_customer_account_form:
+    required_slots:
+    - customer_name
+    - email
+    - phone
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

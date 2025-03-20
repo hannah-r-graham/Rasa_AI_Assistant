@@ -1,0 +1,14 @@
+version: "3.1"
+nlu:
+- intent: create_customer_account
+  examples: |
+    - i want to create a customer account
+- intent: provide_customer_name
+  examples: |
+    - [Tom Johnson](customer_name)
+- intent: provide_email
+  examples: |
+    - Email address is [user123@gmail.com](email)
+- intent: provide_phone
+  examples: |
+    - [404-555-0182](phone)
