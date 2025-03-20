@@ -1,0 +1,235 @@
+version: "2.0"
+nlu:
+
+- intent: ask_airlines
+  examples: |
+    - Show me available airlines to travel to Chicago
+    - What airlines can I take to Chicago?
+    - List the airlines flying to Chicago
+
+- intent: ask_hotels_ohare
+  examples: |
+    - Show me available hotels by O'Hare Airport
+    - List the hotels near O'Hare Airport
+    - What hotels are available near O'Hare?
+
+- intent: ask_hotels_downtown
+  examples: |
+    - Show me available hotels in the downtown area
+    - What hotels are available in downtown Chicago?
+    - List the hotels in downtown Chicago
+
+- intent: ask_italian_restaurants_downtown
+  examples: |
+    - Show me a list of Italian restaurants in the downtown area
+    - What Italian restaurants are in downtown Chicago?
+    - List the Italian restaurants in downtown Chicago
+
+- intent: ask_pizza_places_downtown
+  examples: |
+    - Show me a list of pizza places in the downtown area
+    - What pizza places are in downtown Chicago?
+    - List the pizza places in downtown Chicago
+
+- intent: ask_steakhouses_downtown
+  examples: |
+    - Show me a list of steakhouses in the downtown area
+    - What steakhouses are in downtown Chicago?
+    - List the steakhouses in downtown Chicago
+
+- intent: ask_best_steakhouse_rush_street
+  examples: |
+    - What is the best steakhouse on Rush Street?
+    - Tell me the best steakhouse on Rush Street
+    - Which steakhouse is the best on Rush Street?
+
+- intent: ask_restaurants_greek_town
+  examples: |
+    - Show me the restaurants in Greek Town
+    - List the restaurants in Greek Town
+    - What restaurants are in Greek Town?
+
+- intent: ask_restaurant_address
+  examples: |
+    - Give me the address of Fogo de Chão in Chicago downtown
+    - What is the address of Fogo de Chão in downtown Chicago?
+    - Where is Fogo de Chão in downtown Chicago?
+
+- intent: purchase_airline_tickets
+  examples: |
+    - Purchase airline tickets for a group of 3 on a certain date
+    - Buy tickets to Chicago for 3 people on [date]
+    - I need to purchase 3 airline tickets to Chicago on [date]
+
+- intent: reserve_hotel
+  examples: |
+    - Reserve a hotel for a group of 3 on a certain date
+    - Book a hotel in Chicago for 3 people on [date]
+    - I need a hotel reservation for 3 people on [date]
+
+- intent: reserve_dinner
+  examples: |
+    - Reserve dinner for a group of 3 on a certain date in Gibsons Steakhouse
+    - Book a table for 3 at Gibsons Steakhouse on [date]
+    - I need a dinner reservation for 3 at Gibsons Steakhouse on [date]
+
+- intent: recommend_trip_plan
+  examples: |
+    - Recommend a trip plan for my business trip to Chicago next week
+    - I'm leaving Miami on Tuesday and coming back on Friday. I like evening flights and I would like to try Chicago-style pizzas and hotdogs. The company that I work for covers all trip expenses.
+    - Suggest a trip plan for my business trip to Chicago including flights, hotels, and restaurants
+    - Recommend a trip plan for my business trip to [Chicago](destination_city) next week
+    - I'm leaving [Miami](departure_city) on [Tuesday](departure_date) and coming back on [Friday](return_date). I like [evening](flight_preference) flights and I would like to try [Chicago-style pizzas](food_preference) and [hotdogs](food_preference). The company that I work for covers all trip expenses.
+    - Suggest a trip plan for my business trip to [Chicago](destination_city) including flights, hotels, and restaurants
+    - Plan a business trip to [Chicago](destination_city) for me. I will be leaving from [Miami](departure_city) on [Tuesday](departure_date) and returning on [Friday](return_date). I prefer [evening](flight_preference) flights and want to try [Chicago-style pizzas](food_preference) and [hotdogs](food_preference).
+    - I need a trip plan for my business trip to [Chicago](destination_city) next week. I amm leaving [Miami](departure_city) on [Tuesday](departure_date) and returning on [Friday](return_date). I prefer [evening](flight_preference) flights and want to try [Chicago-style pizzas](food_preference) and [hotdogs](food_preference).
+    - Can you recommend a trip plan for my business trip to [Chicago](destination_city)? I will be leaving [Miami](departure_city) on [Tuesday](departure_date) and coming back on [Friday](return_date). I like [evening](flight_preference) flights and would like to try [Chicago-style pizzas](food_preference) and [hotdogs](food_preference).
+    - Create a trip plan for my business trip to [Chicago](destination_city). I am leaving [Miami](departure_city) on [Tuesday](departure_date) and coming back on [Friday](return_date). I prefer [evening](flight_preference) flights and want to try [Chicago-style pizzas](food_preference) and [hotdogs](food_preference).
+
+- intent: search_sports
+  examples: |
+    - Find me some good games
+    - Show me sports
+    - search sports
+    - list the sports
+
+- intent: show_sports_reviews
+  examples: |
+    - show me the reviews
+    - show me the ratings
+    - show me the reviews of the sports
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - yo
+    - hello world
+    - hi there
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks, goodbye
+    - bye now
+    - thanks, bye!
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - /affirm
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: stop
+  examples: |
+    - stop
+    - nevermind
+    - please stop
+    - i want to stop
+    - stop the form
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - by the way, are you a human?
+- intent: buy_fancy_pizza
+  examples: |
+    - i'd like to buy a fancy pizza
+    - i want a fancy pizza
+    - can i buy a fancy pizza
+    - I'm interested in a fancy flattened bread of Italian origin
+    - buy a fancy pizza
+- intent: buy_pizza
+  examples: |
+    - i'd like to buy a pizza
+    - i want a pizza
+    - can i buy a pizza
+    - I'm interested in a savory round flattened bread of Italian origin
+    - i want to buy a pizza
+    - i want to order a pizza
+- intent: inform
+  examples: |
+    - i'd like a [large](pizza_size) pizza
+    - i want to order a [xl](pizza_size) [hawai](pizza_type) pizza
+    - [medium](pizza_size) pizza
+    - [xl](pizza_size)
+    - [small](pizza_size)
+    - [s](pizza_size)
+    - [pepperoni](pizza_type)
+    - give me a [mozerella](pizza_type) pizza
+    - [hawaii](pizza_type) pizza
+    - [smol](pizza_size)
+    - [hawaii](pizza_type)
+    - i want a [large](pizza_size) pizza
+    - [mozzarella](pizza_type)
+    - [hawai](pizza_type)
+    - [veggie](pizza_type)
+    - [fungi](pizza_type)
+    - [vegggie](pizza_type)
+    - i want to buy a [large](pizza_size) pizza
+    - [large](pizza_size)
+    - [large](pizza_size)
+    - [pepperoni](pizza_type)

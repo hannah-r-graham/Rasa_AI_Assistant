@@ -1,0 +1,169 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: action_restart
+
+- story: search sports
+  steps:
+    - intent: search_sports
+    - action: action_search_sports
+
+- story: show sports reviews
+  steps:
+    - intent: show_sports_reviews
+    - action: action_show_sports_reviews
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - action: action_restart
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+  - action: action_restart
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_pizza
+  - action: simple_pizza_form
+  - active_loop: simple_pizza_form
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: pizza_type
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_pizza_slots
+  - intent: goodbye
+  - action: utter_goodbye
+  - active_loop: null
+  - slot_was_set:
+    - pizza_size: null
+  - slot_was_set:
+    - pizza_type: null
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: buy_fancy_pizza
+  - action: fancy_pizza_form
+  - active_loop: fancy_pizza_form
+  - slot_was_set:
+    - requested_slot: vegetarian
+  - slot_was_set:
+    - vegetarian: true
+  - slot_was_set:
+    - requested_slot: pizza_size
+  - slot_was_set:
+    - pizza_size: large
+  - slot_was_set:
+    - requested_slot: pizza_type
+  - slot_was_set:
+    - pizza_type: pepperoni
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_pizza_slots
+  - intent: goodbye
+  - action: utter_goodbye
+  - active_loop: null
+  - slot_was_set:
+    - pizza_size: null
+  - slot_was_set:
+    - pizza_type: null
+
+- story: Ask for airlines to travel to Chicago
+  steps:
+  - intent: ask_airlines
+  - action: action_list_airlines
+
+- story: Ask for hotels near O'Hare Airport
+  steps:
+  - intent: ask_hotels_ohare
+  - action: action_list_hotels_ohare
+
+- story: Ask for hotels in downtown Chicago
+  steps:
+  - intent: ask_hotels_downtown
+  - action: action_list_hotels_downtown
+
+- story: Ask for Italian restaurants in downtown Chicago
+  steps:
+  - intent: ask_italian_restaurants_downtown
+  - action: action_list_italian_restaurants_downtown
+
+- story: Ask for pizza places in downtown Chicago
+  steps:
+  - intent: ask_pizza_places_downtown
+  - action: action_list_pizza_places_downtown
+
+- story: Ask for steakhouses in downtown Chicago
+  steps:
+  - intent: ask_steakhouses_downtown
+  - action: action_list_steakhouses_downtown
+
+- story: Ask for the best steakhouse on Rush Street
+  steps:
+  - intent: ask_best_steakhouse_rush_street
+  - action: action_best_steakhouse_rush_street
+
+- story: Ask for restaurants in Greek Town
+  steps:
+  - intent: ask_restaurants_greek_town
+  - action: action_list_restaurants_greek_town
+
+- story: Ask for the address of Fogo de Chão in Chicago downtown
+  steps:
+  - intent: ask_restaurant_address
+  - action: action_restaurant_address
+
+- story: Purchase airline tickets for a group of 3 on a certain date
+  steps:
+  - intent: purchase_airline_tickets
+  - action: action_purchase_airline_tickets
+
+- story: Reserve a hotel for a group of 3 on a certain date
+  steps:
+  - intent: reserve_hotel
+  - action: action_reserve_hotel
+
+- story: Reserve dinner for a group of 3 on a certain date in Gibsons Steakhouse
+  steps:
+  - intent: reserve_dinner
+  - action: action_reserve_dinner
+
+- story: Recommend a trip plan for a business trip to Chicago
+  steps:
+  - intent: recommend_trip_plan
+  - action: action_recommend_trip_plan

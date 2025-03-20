@@ -1,0 +1,185 @@
+flights:
+  - airline: Delta
+    flight_number: DL123
+    departure: Miami
+    arrival: Chicago
+    date: 2025-02-15
+  - airline: American Airlines
+    flight_number: AA456
+    departure: New York
+    arrival: Chicago
+    date: 2025-02-16
+  - airline: United Airlines
+    flight_number: UA789
+    departure: Los Angeles
+    arrival: Chicago
+    date: 2025-02-17
+  - airline: Southwest Airlines
+    flight_number: SW123
+    departure: Atlanta
+    arrival: Chicago
+    date: 2025-02-18
+  - airline: Spirit Airlines
+    flight_number: SP123
+    departure: Boston
+    arrival: Chicago
+    date: 2025-02-19
+  - airline: Alaska Airlines
+    flight_number: AS123
+    departure: Seattle
+    arrival: Chicago
+    date: 2025-02-20
+  - airline: Frontier Airlines
+    flight_number: FT123
+    departure: Denver
+    arrival: Chicago
+    date: 2025-02-21
+  - airline: JetBlue
+    flight_number: JB123
+    departure: Fort Lauderdale
+    arrival: Chicago
+    date: 2025-02-22
+  - airline: Air Canada
+    flight_number: AC123
+    departure: Toronto
+    arrival: Chicago
+    date: 2025-02-23
+  - airline: British Airways
+    flight_number: BA123
+    departure: London
+    arrival: Chicago
+    date: 2025-02-24
+  - airline: Lufthansa
+    flight_number: LH123
+    departure: Frankfurt
+    arrival: Chicago
+    date: 2025-02-25
+  - airline: Air France
+    flight_number: AF123
+    departure: Paris
+    arrival: Chicago
+    date: 2025-02-26
+  - airline: KLM
+    flight_number: KL123
+    departure: Amsterdam
+    arrival: Chicago
+    date: 2025-02-27
+  - airline: Qatar Airways
+    flight_number: QR123
+    departure: Doha
+    arrival: Chicago
+    date: 2025-02-28
+  - airline: Emirates
+    flight_number: EK123
+    departure: Dubai
+    arrival: Chicago
+    date: 2025-03-01
+  - airline: Turkish Airlines
+    flight_number: TK123
+    departure: Istanbul
+    arrival: Chicago
+    date: 2025-03-02
+  - airline: Singapore Airlines
+    flight_number: SQ123
+    departure: Singapore
+    arrival: Chicago
+    date: 2025-03-03
+  - airline: ANA
+    flight_number: NH123
+    departure: Tokyo
+    arrival: Chicago
+    date: 2025-03-04
+  - airline: Air India
+    flight_number: AI123
+    departure: Delhi
+    arrival: Chicago
+    date: 2025-03-05
+  - airline: Cathay Pacific
+    flight_number: CX123
+    departure: Hong Kong
+    arrival: Chicago
+    date: 2025-03-06
+
+restaurants:
+  - name: Giordano's
+    cuisine: Pizza
+    location: Downtown
+  - name: Lou Malnati's
+    cuisine: Pizza
+    location: Downtown
+  - name: RPM Italian
+    cuisine: Italian
+    location: Downtown
+  - name: Gibson's Bar & Steakhouse
+    cuisine: Steakhouse
+    location: Rush Street
+  - name: Fogo de Chão
+    cuisine: Brazilian Steakhouse
+    location: Downtown
+  - name: Rosebud on Rush
+    cuisine: Italian
+    location: Rush Street
+  - name: The Purple Pig
+    cuisine: Mediterranean
+    location: Downtown
+  - name: Eataly Chicago
+    cuisine: Italian
+    location: Downtown
+  - name: Portillo's Hot Dogs
+    cuisine: American
+    location: Downtown
+  - name: Wildberry Pancakes and Cafe
+    cuisine: Breakfast
+    location: Downtown
+  - name: Pequod's Pizza
+    cuisine: Pizza
+    location: Downtown
+  - name: Chicago Cut Steakhouse
+    cuisine: Steakhouse
+    location: Downtown
+  - name: Bavette's Bar & Boeuf
+    cuisine: Steakhouse
+    location: Downtown
+  - name: Greek Islands
+    cuisine: Greek
+    location: Greek Town
+  - name: Athena Greek Restaurant
+    cuisine: Greek
+    location: Greek Town
+  - name: Al's Beef
+    cuisine: American
+    location: Downtown
+  - name: Harry Caray's Italian Steakhouse
+    cuisine: Steakhouse
+    location: Downtown
+  - name: Siena Tavern
+    cuisine: Italian
+    location: Downtown
+  - name: Au Cheval
+    cuisine: American
+    location: Downtown
+  - name: Gene & Georgetti
+    cuisine: Steakhouse
+    location: Downtown
+
+hotels:
+  - name: Hilton Chicago O'Hare Airport
+    location: O'Hare Airport
+  - name: Hyatt Regency O'Hare Chicago
+    location: O'Hare Airport
+  - name: The Peninsula Chicago
+    location: Downtown
+  - name: The Langham, Chicago
+    location: Downtown
+  - name: The Ritz-Carlton, Chicago
+    location: Downtown
+  - name: Hyatt Regency Chicago
+    location: Downtown
+  - name: Sheraton Grand Chicago
+    location: Downtown
+  - name: Swissotel Chicago
+    location: Downtown
+  - name: Trump International Hotel & Tower Chicago
+    location: Downtown
+  - name: Loews Chicago Hotel
+    location: Downtown

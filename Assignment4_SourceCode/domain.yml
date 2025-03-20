@@ -1,0 +1,224 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- buy_pizza
+- greet
+- goodbye
+- inform
+- affirm
+- stop
+- bot_challenge
+- buy_fancy_pizza
+- deny
+- mood_great
+- mood_unhappy
+- request_fancy_form
+- request_pizza_form
+- search_sports
+- show_sports_reviews
+- ask_airlines
+- ask_hotels_ohare
+- ask_hotels_downtown
+- ask_italian_restaurants_downtown
+- ask_pizza_places_downtown
+- ask_steakhouses_downtown
+- ask_best_steakhouse_rush_street
+- ask_restaurants_greek_town
+- ask_restaurant_address
+- purchase_airline_tickets
+- reserve_hotel
+- reserve_dinner
+- recommend_trip_plan
+entities:
+- pizza_size
+- pizza_type
+- airline
+- hotel
+- restaurant
+- location
+- date
+- group_size
+- departure_city
+- destination_city
+- departure_date
+- return_date
+- flight_preference
+- food_preference
+forms:
+  simple_pizza_form:
+    required_slots:
+    - pizza_size
+    - pizza_type
+  fancy_pizza_form:
+    required_slots:
+    - vegetarian
+    - pizza_size
+    - pizza_type
+slots:
+  pizza_size:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pizza_size
+#      conditions:
+#      - active_loop: pizza_form
+#      - active_loop: pizza_form
+#    - requested_slot: pizza_size
+  pizza_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pizza_type
+  vegetarian:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+    - type: from_intent
+      value: false
+      intent: deny
+  airline:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: airline
+  hotel:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: hotel
+  restaurant:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: restaurant
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  group_size:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: group_size
+  departure_city:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: departure_city
+  destination_city:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: destination_city
+  departure_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: departure_date
+  return_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: return_date
+  flight_preference:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: flight_preference
+  food_preference:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: food_preference
+
+
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_submit:
+  - text: I will now order a pizza for you!
+  utter_pizza_slots:
+  - text: I will order a {pizza_size} {pizza_type} pizza.
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  utter_ask_pizza_size:
+  - text: What size would you like your pizza to be?
+  utter_ask_pizza_type:
+  - text: What kind of pizza would you like to buy?
+  utter_list_airlines:
+    - text: "Here are the available airlines to travel to Chicago:\nDelta, American Airlines, United Airlines, Southwest Airlines, Spirit Airlines, Alaska Airlines, Frontier Airlines, JetBlue, Air Canada, British Airways, Lufthansa, Air France, KLM, Qatar Airways, Emirates, Turkish Airlines, Singapore Airlines, ANA, Air India, Cathay Pacific"
+  utter_list_hotels_ohare:
+    - text: "Here are the available hotels near O'Hare Airport:\nHilton Chicago O'Hare Airport, Hyatt Regency O'Hare Chicago"
+  utter_list_hotels_downtown:
+    - text: "Here are the available hotels in downtown Chicago:\nThe Peninsula Chicago, The Langham, Chicago, The Ritz-Carlton, Chicago, Hyatt Regency Chicago, Sheraton Grand Chicago, Swissotel Chicago, Trump International Hotel & Tower Chicago, Loews Chicago Hotel"
+  utter_list_italian_restaurants_downtown:
+    - text: "Here are the Italian restaurants in downtown Chicago:\nRPM Italian, Rosebud on Rush, Eataly Chicago, Siena Tavern"
+  utter_list_pizza_places_downtown:
+    - text: "Here are the pizza places in downtown Chicago:\nGiordano's, Lou Malnati's, Pequod's Pizza"
+  utter_list_steakhouses_downtown:
+    - text: "Here are the steakhouses in downtown Chicago:\nGibson's Bar & Steakhouse, Chicago Cut Steakhouse, Bavette's Bar & Boeuf, Harry Caray's Italian Steakhouse, Gene & Georgetti"
+  utter_best_steakhouse_rush_street:
+    - text: "The best steakhouse on Rush Street is Gibson's Bar & Steakhouse."
+  utter_list_restaurants_greek_town:
+    - text: "Here are the restaurants in Greek Town:\nGreek Islands, Athena Greek Restaurant"
+  utter_restaurant_address:
+    - text: "The address of Fogo de Chão in Chicago downtown is [Address]."
+  utter_purchase_airline_tickets:
+    - text: "Your airline tickets for a group of 3 on [date] have been purchased."
+  utter_reserve_hotel:
+    - text: "Your hotel reservation for a group of 3 on [date] has been made."
+  utter_reserve_dinner:
+    - text: "Your dinner reservation for a group of 3 on [date] at Gibsons Steakhouse has been made."
+  utter_recommend_trip_plan:
+    - text: "For your business trip to Chicago next week, I recommend evening flights from Miami on Tuesday and returning on Friday. Enjoy Chicago-style pizzas at Giordano's and Lou Malnati's, and try the famous hotdogs at Portillo's."
+actions:
+- action_ask_pizza_type
+- action_ask_vegetarian
+- utter_ask_continue
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_pizza_slots
+- utter_submit
+- validate_fancy_pizza_form
+- validate_simple_pizza_form
+- action_search_sports
+- action_show_sports_reviews
+- action_list_airlines
+- action_list_hotels_ohare
+- action_list_hotels_downtown
+- action_list_italian_restaurants_downtown
+- action_list_pizza_places_downtown
+- action_list_steakhouses_downtown
+- action_best_steakhouse_rush_street
+- action_list_restaurants_greek_town
+- action_restaurant_address
+- action_purchase_airline_tickets
+- action_reserve_hotel
+- action_reserve_dinner
+- action_recommend_trip_plan
+
